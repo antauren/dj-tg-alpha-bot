@@ -17,3 +17,6 @@ __pycache__/
 
 # virtual environment
 .env/
+
+# local development database
+db.sqlite3
