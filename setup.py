@@ -1,8 +1,10 @@
 # coding: utf-8
 """
-Setup.py содержит в себе ключевую информацию для сборки проекта, подробнее о составе полей и требованиях к их подготовке можно
-прочитать в https://github.com/HimkiDevCom/templateproject/blob/master/README.md
-Либо используйте официальную документацию: https://packaging.python.org/, https://packaging.python.org/distributing/
+Setup.py содержит в себе ключевую информацию для сборки проекта, подробнее
+о составе полей и требованиях к их подготовке можно прочитать в
+https://github.com/HimkiDevCom/templateproject/blob/master/README.md
+Либо используйте официальную документацию: https://packaging.python.org/,
+https://packaging.python.org/distributing/
 """
 
 # Always prefer setuptools over distutils
@@ -18,22 +20,22 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='sample',
+    name='dj-tg-alpha-bot',
 
     # Versions should comply with PEP440.  For a discussion on single-sourcing
     # the version across setup.py and the project code, see
     # https://packaging.python.org/en/latest/single_source_version.html
-    version='1.2.0',
+    version='0.0.1',
 
-    description='A sample Python project',
+    description='Django Telgram bot, alpha verions',
     long_description=long_description,
 
     # The project's main homepage.
     url='https://github.com/HimkiDevCom/templateproject',
 
     # Author details
-    author='HimkiDevCom&contributors',
-    author_email='',
+    author='HimkiDevCom & co',
+    author_email='lisitsky@gmail.com',
 
     # Choose your license
     license='GNU LGPL v3',
@@ -44,7 +46,14 @@ setup(
         #   3 - Alpha
         #   4 - Beta
         #   5 - Production/Stable
-        'Development Status :: 3 - Alpha',
+        # 'Development Status :: 3 - Alpha',
+        'Development Status :: 1 - Planning',
+        # 'Development Status :: 2 - Pre-Alpha',
+        # 'Development Status :: 3 - Alpha',
+        # 'Development Status :: 4 - Beta',
+        # 'Development Status :: 5 - Production/Stable',
+        # 'Development Status :: 6 - Mature',
+        # 'Development Status :: 7 - Inactive',
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
@@ -55,11 +64,11 @@ setup(
 
         # Specify the Python versions you support here. In particular, ensure
         # that you indicate whether you support Python 2, Python 3 or both.
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.6',
-        'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.3',
+        # 'Programming Language :: Python :: 2',
+        # 'Programming Language :: Python :: 2.6',
+        # 'Programming Language :: Python :: 2.7',
+        # 'Programming Language :: Python :: 3',
+        # 'Programming Language :: Python :: 3.3',
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
@@ -79,7 +88,7 @@ setup(
     # your project is installed. For an analysis of "install_requires" vs pip's
     # requirements files see:
     # https://packaging.python.org/en/latest/requirements.html
-    install_requires=['peppercorn'],
+    # install_requires=['peppercorn'],
 
     # List additional groups of dependencies here (e.g. development
     # dependencies). You can install these using the following syntax,
