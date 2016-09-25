@@ -12,6 +12,7 @@ gunicorn==19.6.0
 html5lib==0.9999999
 mccabe==0.5.2
 pluggy==0.3.1
+psycopg2==2.6.2
 py==1.4.31
 pycodestyle==2.0.0
 pyflakes==1.2.3
