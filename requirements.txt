@@ -23,3 +23,4 @@ readme-renderer==0.7.0
 six==1.10.0
 tox==2.3.1
 virtualenv==15.0.3
+whitenoise==3.2.1
