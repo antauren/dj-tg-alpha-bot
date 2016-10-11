@@ -139,3 +139,9 @@ STATICFILES_DIRS = (
 # https://warehouse.python.org/project/whitenoise/
 
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+# settings for tg bots
+SITE_ID = 1
+
+TELEGRAM_BOT_HANDLERS_CONF = "dj_tg_bot.handlers"
+TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # two hours before a token expires
