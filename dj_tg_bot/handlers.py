@@ -1,5 +1,5 @@
 from telegrambot.handlers import command
 
 urlpatterns = [
-    # command('start', StartView.as_command_view()),
+    command('start', StartView.as_command_view()),
 ]
