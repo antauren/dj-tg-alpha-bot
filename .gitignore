@@ -15,6 +15,9 @@ __pycache__/
 # PyCharm
 .idea
 
+# mac specific folders
+.DS_Store
+
 # virtual environment
 .env/
 
