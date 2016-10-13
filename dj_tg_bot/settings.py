@@ -148,3 +148,20 @@ SITE_ID = 1
 
 TELEGRAM_BOT_HANDLERS_CONF = "dj_tg_bot.handlers"
 TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # two hours before a token expires
+
+### logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
