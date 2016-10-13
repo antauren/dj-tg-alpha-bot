@@ -1,5 +1,5 @@
 from telegrambot.handlers import command, unknown_command
-from geogame.bot_views import StartView
+from geogame.bot_views import StartView, UnknownView
 
 urlpatterns = [
     command('start', StartView.as_command_view()),
