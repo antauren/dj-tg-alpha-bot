@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/1.10/ref/settings/
 """
 
 import os
+# for heroku
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -85,7 +87,7 @@ DATABASES = {
 
 # Update database configuration with $DATABASE_URL.
 # Required for heroku installation
-import dj_database_url
+
 db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 
@@ -146,3 +148,20 @@ SITE_ID = 1
 
 TELEGRAM_BOT_HANDLERS_CONF = "dj_tg_bot.handlers"
 TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # two hours before a token expires
+
+### logging
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console'],
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+        },
+    },
+}
