@@ -8,5 +8,5 @@ class StartView(TemplateCommandView):
     template_text = 'geogame/messages/command_start_text.txt'
 
 
-class UnknownView(generic.TemplateCommandView):
+class UnknownView(TemplateCommandView):
     template_text = "geogame/messages/command_unknown_text.txt"
