@@ -1,6 +1,12 @@
 """
 Views of Bot sepateated from standard web views.
 """
+from telegrambot.bot_views.generic.responses import TextResponse, KeyboardResponse
+from telegram import ParseMode
+import sys
+import traceback
+import logging
+
 from telegrambot.bot_views import generic #import TemplateCommandView
 
 
