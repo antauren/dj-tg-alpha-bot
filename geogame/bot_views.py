@@ -22,6 +22,7 @@ class TemplateCommandView(generic.TemplateCommandView):
             ctx = self.get_context(bot, update, **kwargs)
             text = TextResponse(self.template_text, ctx).render()
             keyboard = KeyboardResponse(self.template_keyboard, ctx).render()
+            logger = logging.getLogger(__name__)
             logger.debug("Text:" + str(text.encode('utf-8')))
             logger.debug("Keyboard:" + str(keyboard))
             if text:
