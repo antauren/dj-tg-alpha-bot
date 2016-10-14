@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'telegrambot',
     'django.contrib.sites',
+    'geogame',
 ]
 
 MIDDLEWARE = [
