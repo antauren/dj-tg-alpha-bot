@@ -1,0 +1,99 @@
+process
+
+
+pip install gunicorn
+add Procfile
+
+===
+
+pip install dj-database-url
+
+settings.py:
+
+# Update database configuration with $DATABASE_URL.
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
+
+
+===
+Static assets and file serving
+
+settings.py:
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/1.9/howto/static-files/
+
+PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+
+STATIC_ROOT = os.path.join(PROJECT_ROOT, 'staticfiles')
+STATIC_URL = '/static/'
+
+# Extra places for collectstatic to find static files.
+STATICFILES_DIRS = (
+    os.path.join(PROJECT_ROOT, 'static'),
+)
+
+Whitenoise
+
+pip install whitenoise
+pip freeze > requirements.txt
+
+settings.py
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
+
+
+wsgi.py
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
+
+==========
+
+
+
+set paths
+
+
+===
+ admin panel
+
+
+ createsuperuser
+
+
+ =====
+  add url patterns
+
+  url(r'^telegrambot/', include('telegrambot.urls', namespace="telegrambot")
+
+setttings:
+# settings for tg bots
+SITE_ID = 1
+
+TELEGRAM_BOT_HANDLERS_CONF = "dj_tg_bot.handlers"
+TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # tow hours before a token expires
+
+
+===
+
+
+add handlers.py
+
+
+====
+установить sites и для первого Site поменять домен на правильный
+
+===
+создать через админку бота
+при сохранении активированного бота срабатывает триггер и активируется
+webhook для него
+(при снятии галочки enabled - дезактивируется)
+
+
+===
+создаем первую команду /start в отдельной веточке
