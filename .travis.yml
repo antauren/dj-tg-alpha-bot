@@ -3,16 +3,15 @@
 
 language: python
 
-env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=py35
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6"
 
-install: pip install tox
+# install: pip install tox
+install pip install -r requirements.txt
 
 script: tox
 
-notifications:
-  email: false
+# notifications:
+  # email: false
