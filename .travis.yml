@@ -12,7 +12,10 @@ python:
 install: pip install -r requirements/test.txt
 
 # script: tox
-script: py.test tests
+# script: py.test tests
+script:
+  - python runtests.py
+  - python -m tests.test_logger
 
 # notifications:
   # email: false
