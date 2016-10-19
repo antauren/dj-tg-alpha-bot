@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/lisitsky/dj-tg-alpha-bot.svg?branch=master)](https://travis-ci.org/lisitsky/dj-tg-alpha-bot)
+
 # Удалить при подготовке проекта (начало)
 # Где и что менять для подготовки проекта (пока не проверялось)
 ## Файл setup.py
