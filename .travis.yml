@@ -3,16 +3,19 @@
 
 language: python
 
-env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=py35
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6-dev"
 
-install: pip install tox
+# install: pip install tox
+install: pip install -r requirements/test.txt
 
-script: tox
+# script: tox
+# script: py.test tests
+script:
+  - python runtests.py
+  - python -m tests.test_logger
 
-notifications:
-  email: false
+# notifications:
+  # email: false

@@ -7,3 +7,10 @@ recursive-include data *
 # If using Python 2.6 or less, then have to include package data, even though
 # it's already declared in setup.py
 # include sample/*.dat
+
+# Include project files
+include *.py
+include Procfile
+include requirements.txt
+include runtime.txt
+recursive-include dj_tg_bot *.gitkeep
