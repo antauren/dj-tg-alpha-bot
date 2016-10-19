@@ -6,12 +6,13 @@ language: python
 python:
   - "3.4"
   - "3.5"
-  - "3.6"
+  - "3.6-dev"
 
 # install: pip install tox
 install: pip install -r requirements/test.txt
 
-script: tox
+# script: tox
+script: py.test tests
 
 # notifications:
   # email: false
