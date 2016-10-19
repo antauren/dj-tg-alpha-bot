@@ -32,7 +32,7 @@ class LoggingLevelTest(TestCase):
                 # print(settings.LOGGING['loggers'])
                 # django application should get logging setting DJANGO_LOG_LEVEL
                 self.assertEqual(
-                    settings.LOGGING['loggers']['django']['level'], level+'1'
+                    settings.LOGGING['loggers']['django']['level'], level
                 )
                 # geogame too
                 self.assertEqual(
