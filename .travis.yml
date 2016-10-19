@@ -17,5 +17,8 @@ script:
   - python runtests.py
   - python -m tests.test_logger
 
+# send coverage stats to coveralls.io
+after_success:
+  - coveralls
 # notifications:
   # email: false
