@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'telegrambot',
     'django.contrib.sites',
+    'geogame',
 ]
 
 MIDDLEWARE = [
@@ -162,7 +163,7 @@ LOGGING = {
     'loggers': {
         'django': {
             'handlers': ['console'],
-            'level': os.getenv('DJANGO_LOG_LEVEL', 'DEBUG'),
+            'level': os.getenv('DJANGO_LOG_LEVEL', 'INFO'),
         },
         'geogame': {
             'handlers': ['console'],
