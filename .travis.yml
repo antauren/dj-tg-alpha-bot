@@ -16,6 +16,7 @@ install: pip install -r requirements/test.txt
 script:
   - python runtests.py
   - python -m tests.test_logger
+  - coverage run --source=geogame,dj_tg_bot manage.py test
 
 # send coverage stats to coveralls.io
 after_success:
