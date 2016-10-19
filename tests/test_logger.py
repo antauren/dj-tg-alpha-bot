@@ -9,7 +9,7 @@ from unittest.mock import patch
 # from unittest import skip
 # we have to use tools outside of django, because when it's initialized
 # it's too late to change environment variables
-from unittest import TestCase, skip
+from unittest import TestCase, skip, main
 
 class LoggingLevelTest(TestCase):
 
@@ -21,20 +21,24 @@ class LoggingLevelTest(TestCase):
         Checks config accepts environment variable
         DJANGO_LOG_LEVEL and sets log level according to it
         """
+
         env_var = 'DJANGO_LOG_LEVEL'
+        from dj_tg_bot import settings
         for level in self.levels:
             with patch.dict('os.environ', {env_var: level}):
-                from dj_tg_bot import settings
                 importlib.reload(settings)
                 # print(os.environ[env_var])  # should print out 'newvalue'
                 assert env_var in os.environ  # should be True
                 # print(settings.LOGGING['loggers'])
                 # django application should get logging setting DJANGO_LOG_LEVEL
                 self.assertEqual(
-                    settings.LOGGING['loggers']['django']['level'], level
+                    settings.LOGGING['loggers']['django']['level'], level+'1'
                 )
                 # geogame too
                 self.assertEqual(
                     settings.LOGGING['loggers']['geogame']['level'], level
                 )
             assert env_var not in os.environ  # should be True
+
+if __name__ == '__main__':
+    main()
