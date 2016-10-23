@@ -3,13 +3,15 @@ Test Configuration of logger.
 """
 
 
-import os, importlib
+import os
+import importlib
 from unittest.mock import patch
 # from django.test import TestCase
 # from unittest import skip
 # we have to use tools outside of django, because when it's initialized
 # it's too late to change environment variables
-from unittest import TestCase, skip, main
+from unittest import TestCase, main
+
 
 class LoggingLevelTest(TestCase):
 
@@ -30,7 +32,7 @@ class LoggingLevelTest(TestCase):
                 # print(os.environ[env_var])  # should print out 'newvalue'
                 assert env_var in os.environ  # should be True
                 # print(settings.LOGGING['loggers'])
-                # django application should get logging setting DJANGO_LOG_LEVEL
+                # django app should get logging setting from DJANGO_LOG_LEVEL
                 self.assertEqual(
                     settings.LOGGING['loggers']['django']['level'], level
                 )

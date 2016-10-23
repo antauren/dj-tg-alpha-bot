@@ -96,18 +96,19 @@ DATABASES['default'].update(db_from_env)
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
+_PASSWORD_VALIDATOR = 'django.contrib.auth.password_validation.'
 AUTH_PASSWORD_VALIDATORS = [
     {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
+        'NAME': _PASSWORD_VALIDATOR + 'UserAttributeSimilarityValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
+        'NAME': _PASSWORD_VALIDATOR + 'MinimumLengthValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
+        'NAME': _PASSWORD_VALIDATOR + 'CommonPasswordValidator',
     },
     {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
+        'NAME': _PASSWORD_VALIDATOR + 'NumericPasswordValidator',
     },
 ]
 
@@ -148,9 +149,9 @@ STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 SITE_ID = 1
 
 TELEGRAM_BOT_HANDLERS_CONF = "dj_tg_bot.handlers"
-TELEGRAM_BOT_TOKEN_EXPIRATION = "2" # two hours before a token expires
+TELEGRAM_BOT_TOKEN_EXPIRATION = "2"  # two hours before a token expires
 
-### logging
+# logging
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
