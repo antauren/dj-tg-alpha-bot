@@ -1,0 +1,11 @@
+-r base.txt
+bleach==1.4.3
+flake8==3.0.4
+pycodestyle==2.0.0
+pyflakes==1.2.3
+pytest==3.0.2
+pytest-cov==2.3.1
+check-manifest==0.34
+coverage==4.2
+tox==2.3.1
+coveralls>=1.1

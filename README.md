@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/lisitsky/dj-tg-alpha-bot.svg?branch=master)](https://travis-ci.org/lisitsky/dj-tg-alpha-bot)
+[![Requirements Status](https://requires.io/github/lisitsky/dj-tg-alpha-bot/requirements.svg?branch=master)](https://requires.io/github/lisitsky/dj-tg-alpha-bot/requirements/?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/lisitsky/dj-tg-alpha-bot/badge.svg)](https://coveralls.io/github/lisitsky/dj-tg-alpha-bot)
 # Удалить при подготовке проекта (начало)
 # Где и что менять для подготовки проекта (пока не проверялось)
 ## Файл setup.py

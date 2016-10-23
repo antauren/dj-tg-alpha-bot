@@ -3,16 +3,24 @@
 
 language: python
 
-env:
-  - TOXENV=py26
-  - TOXENV=py27
-  - TOXENV=py33
-  - TOXENV=py34
-  - TOXENV=py35
+python:
+  - "3.4"
+  - "3.5"
+  - "3.6-dev"
 
-install: pip install tox
+# install: pip install tox
+install: pip install -r requirements/test.txt
 
-script: tox
+# script: tox
+# script: py.test tests
+script:
+  - flake8 .
+  - python runtests.py
+  - python -m tests.test_logger
+  - coverage run --source=geogame,dj_tg_bot manage.py test
 
-notifications:
-  email: false
+# send coverage stats to coveralls.io
+after_success:
+  - coveralls
+# notifications:
+  # email: false
