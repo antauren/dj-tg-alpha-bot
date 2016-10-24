@@ -23,7 +23,6 @@ class LoggingLevelTest(TestCase):
         Checks config accepts environment variable
         DJANGO_LOG_LEVEL and sets log level according to it
         """
-
         env_var = 'DJANGO_LOG_LEVEL'
         from dj_tg_bot import settings
         for level in self.levels:
