@@ -1,0 +1,9 @@
+{
+  "name": "Django Telegram Bot experiment",
+  "description": "Python 3.5 + django + DRF + django-telegram-bot",
+  "repository": "https://github.com/lisitsky/dj-tg-alpha-bot",
+  "keywords": ["Python", "Django", "DRF", "Telegram"],
+  "scripts": {
+    "postdeploy": "python manage.py migrate"
+  }
+}
