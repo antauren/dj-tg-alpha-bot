@@ -5,3 +5,4 @@ curtsies==0.2.10
 greenlet==0.4.10
 wcwidth==0.1.7
 coveralls>=1.1
+factory-boy==2.6.0
