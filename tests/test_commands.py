@@ -7,11 +7,18 @@ except ImportError:
 
 
 class TestSimpleCommands(testcases.BaseTestBot):
+    fixtures = [
+        'tests/fixtures/scenarios',
+    ]
     start = {'in': '/start',
              'out': {'parse_mode': 'Markdown',
                      'reply_markup': '',
-                     'text': "Welcome"}
-             }
+                     'text': "Welcome"}}
+
+    lists = {'in': '/list',
+             'out': {'parse_mode': 'Markdown',
+                     'reply_markup': '/scenario 1',
+                     'text': "Select from list:"}}
 
     def setUp(self):
         # Bot upon saving tries to install webhook in real telegram
@@ -35,3 +42,9 @@ class TestSimpleCommands(testcases.BaseTestBot):
         Test bot accept normally command /start and replies as it should.
         """
         self._test_message_ok(self.start)
+
+    def test_list(self):
+        """
+        Test bot can reply command /list and lists available scenarios.
+        """
+        self._test_message_ok(self.lists)

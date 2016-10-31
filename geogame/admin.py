@@ -1,3 +1,8 @@
-# from django.contrib import admin
+from django.contrib import admin
+from geogame.models import Scenario
 
-# Register your models here.
+
+class ScenarioAdmin(admin.ModelAdmin):
+    pass
+
+admin.site.register(Scenario, ScenarioAdmin)
