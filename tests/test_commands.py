@@ -15,10 +15,15 @@ class TestSimpleCommands(testcases.BaseTestBot):
                      'reply_markup': '',
                      'text': "Welcome"}}
 
-    lists = {'in': '/list',
-             'out': {'parse_mode': 'Markdown',
-                     'reply_markup': '/scenario 1',
-                     'text': "Select from list:"}}
+    lists_scen01 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/scenario 1 Найти Кремль',
+                            'text': "Select from list:"}}
+
+    lists_scen02 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/scenario 2 Find BigBen',
+                            'text': "Select from list:"}}
 
     def setUp(self):
         # Bot upon saving tries to install webhook in real telegram
@@ -47,4 +52,5 @@ class TestSimpleCommands(testcases.BaseTestBot):
         """
         Test bot can reply command /list and lists available scenarios.
         """
-        self._test_message_ok(self.lists)
+        self._test_message_ok(self.lists_scen01)
+        self._test_message_ok(self.lists_scen02)

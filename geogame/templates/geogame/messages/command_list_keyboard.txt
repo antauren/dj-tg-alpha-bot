@@ -1,1 +1,1 @@
-{% load telegrambot_filters %}{% autoescape off %}{{ scenarios |keyboard_field:"command=scenario&field=id&per_line=1"}}{% endautoescape %}
+{% load dj_tg_bot_filters %}{% autoescape off %}{{ scenarios |keyboard_field:"command=scenario&field=id&field=name&per_line=1"}}{% endautoescape %}
