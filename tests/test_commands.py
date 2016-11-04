@@ -17,12 +17,12 @@ class TestSimpleCommands(testcases.BaseTestBot):
 
     lists_scen01 = {'in': '/list',
                     'out': {'parse_mode': 'Markdown',
-                            'reply_markup': '/scenario 1 Найти Кремль',
+                            'reply_markup': '/play 1 Найти Кремль',
                             'text': "Select from list:"}}
 
     lists_scen02 = {'in': '/list',
                     'out': {'parse_mode': 'Markdown',
-                            'reply_markup': '/scenario 2 Find BigBen',
+                            'reply_markup': '/play 2 Find BigBen',
                             'text': "Select from list:"}}
 
     def setUp(self):
