@@ -1,0 +1,8 @@
+
+{% if scenarios %}
+Select from list:{% for sc in scenarios %}
+  {{ sc.id }}:{{ sc.name }}
+{% endfor %}
+{% else %}
+No scenarios at a moment
+{% endif %}

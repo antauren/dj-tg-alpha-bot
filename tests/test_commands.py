@@ -5,13 +5,32 @@ try:
 except ImportError:
     import mock  # noqa
 
+from geogame.models import Scenario
+
 
 class TestSimpleCommands(testcases.BaseTestBot):
+    fixtures = [
+        'tests/fixtures/scenarios',
+    ]
     start = {'in': '/start',
              'out': {'parse_mode': 'Markdown',
                      'reply_markup': '',
-                     'text': "Welcome"}
-             }
+                     'text': "Welcome"}}
+
+    lists_scen01 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/play 1 Найти Кремль',
+                            'text': "Select from list:"}}
+
+    lists_scen02 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/play 2 Find BigBen',
+                            'text': "Select from list:"}}
+
+    lists_scen_no = {'in': '/list',
+                     'out': {'parse_mode': 'Markdown',
+                             'reply_markup': '',
+                             'text': "No scenarios at a moment"}}
 
     def setUp(self):
         # Bot upon saving tries to install webhook in real telegram
@@ -35,3 +54,27 @@ class TestSimpleCommands(testcases.BaseTestBot):
         Test bot accept normally command /start and replies as it should.
         """
         self._test_message_ok(self.start)
+
+    def test_list(self):
+        """
+        Test bot can reply command /list and lists available scenarios.
+        """
+        self._test_message_ok(self.lists_scen01)
+        self._test_message_ok(self.lists_scen02)
+
+    def test_list_empty(self):
+        """
+        Test what to show in case of empty scenarios list.
+        """
+        Scenario.objects.all().delete()  # now we have empty fixtures
+        # print(Scenario.objects.all())  # just to ensure :)
+        self._test_message_ok(self.lists_scen_no)
+
+    def test_list_empty2(self):
+        """
+        Test what to show in case of empty scenarios list with mocked bot view.
+        """
+        # Substitute with empty queryset
+        with mock.patch('geogame.bot_views.ScenariosListCommandView.queryset',
+                        Scenario.objects.none()):
+            self._test_message_ok(self.lists_scen_no)
