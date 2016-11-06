@@ -2,6 +2,7 @@
 [![Requirements Status](https://requires.io/github/lisitsky/dj-tg-alpha-bot/requirements.svg?branch=master)](https://requires.io/github/lisitsky/dj-tg-alpha-bot/requirements/?branch=master)
 [![Coverage Status](https://coveralls.io/repos/github/lisitsky/dj-tg-alpha-bot/badge.svg)](https://coveralls.io/github/lisitsky/dj-tg-alpha-bot)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/88e8765fdc384aaf9a44e7f3a9d8371a)](https://www.codacy.com/app/lisitsky/dj-tg-alpha-bot?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=lisitsky/dj-tg-alpha-bot&amp;utm_campaign=Badge_Grade)
+[![Linty](https://www.lintyapp.com/repo/lisitsky/dj-tg-alpha-bot/badge.svg)](https://www.lintyapp.com/repo/lisitsky/dj-tg-alpha-bot)
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 

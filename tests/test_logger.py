@@ -41,5 +41,6 @@ class LoggingLevelTest(TestCase):
                 )
             assert env_var not in os.environ  # should be True
 
+
 if __name__ == '__main__':
     main()
