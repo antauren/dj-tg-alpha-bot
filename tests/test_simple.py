@@ -10,6 +10,8 @@ class TestScenario(TestCase):
 
     def test_scenario_str_method(self):
         name = 'Some scenario name'
-        scenario = Scenario(name=name)
+        scenario = Scenario.objects.create(name=name)
         self.assertEqual(str(scenario), name)
-        assert str(scenario), name
+        assert str(scenario) == name
+        scenario = Scenario(name=name)
+        assert str(scenario) == name
