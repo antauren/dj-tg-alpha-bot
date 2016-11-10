@@ -15,4 +15,3 @@ class TestScenario(TestCase):
         assert str(scenario) == name
         scenario = Scenario(name=name)
         assert str(scenario) == name
-
