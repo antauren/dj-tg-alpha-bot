@@ -1,6 +1,7 @@
 from django.test import TestCase
 from geogame.models import Scenario
 
+
 def test_success():
     assert True
 
