@@ -33,7 +33,7 @@ if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
 		-Dsonar.host.url=$SONAR_HOST_URL \
 		-Dsonar.login=$SONAR_TOKEN
 
-elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN-}" ]; then
+elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN}" ]; then
 	# => This will analyse the PR and display found issues as comments in the PR, but it won't push results to the SonarQube server
 	#
 	# For security reasons environment variables are not available on the pull requests
@@ -45,7 +45,7 @@ elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN-}" ]; then
 		-Dsonar.host.url=$SONAR_HOST_URL \
 		-Dsonar.login=$SONAR_TOKEN \
 		-Dsonar.analysis.mode=preview \
-		-Dsonar.github.oauth=$GITHUB_ACCESS_TOKEN \
+		-Dsonar.github.oauth=$GITHUB_TOKEN \
 		-Dsonar.github.repository=$TRAVIS_REPO_SLUG \
 		-Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
 else
@@ -53,3 +53,8 @@ else
     echo "Nothing to do"
 
 fi
+
+echo TPR $TRAVIS_PULL_REQUEST
+echo TB  $TRAVIS_BRANCH
+echo TRS $TRAVIS_REPO_SLUG
+echo GT `expr substr ${GITHUB_TOKEN} 0 5`
