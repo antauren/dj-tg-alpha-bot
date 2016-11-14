@@ -30,6 +30,8 @@ script:
   - python runtests.py
   - python -m tests.test_logger
   - coverage run --source=geogame,dj_tg_bot manage.py test
+  - ./runSonarQubeAnalysis.sh
+#  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
 
 # send coverage stats to coveralls.io
 after_success:
