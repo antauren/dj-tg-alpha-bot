@@ -11,6 +11,15 @@ python:
 # install: pip install tox
 install: pip install -r requirements/test.txt
 
+
+addons:
+  sonarqube: true
+
+env:
+  global:
+    # defines SONAR_TOKEN=abcdef0123456789
+    - secure: "f0QwGDffk07cDjsJ1xG0WQdVCs/9Hw1lAcI1SINkJnUrIY2Z2R8Js5NGqv8KPH7hqvETD66OssFafSHX2WLsRleT3uj5KCFHec4EFEqMtS+0UShmlKT0Kz2lED5HJXZGi/jm26fqXIn9RLjr2OyoJBRt4JCFo16xO4FZ64n9XQRwbOHtIFG1jwnPBIXzynW5xe/YSBGj0uaUtp5SgdO4HKinLXqjguMCdH/C+kkd876zspOlfW6lvGcm91kDSPImMZ99TqvWjq27EUOrveu9jNtxNH0eJGuRJgX4sdK1yb9yP2Zfx5zFetSiJv7rBnc1hZmqdgKocc267C/y3lbAkg3tXXPe4Gm8z0dbLITh3IWNF2V/uBgnzaRojDoN/gqhAtkdt2CxCrwnHrSzYqO8ZQq1SZce5RPoMMuPD10Vzc9VOCSVMgkgScLjYbQQvSEUp4lAOZKQ34CI/IlJeree9xuWDWnaGR1A89inMEGYpwd8sJiEuGkUylEgafvuEd8gOKdzbJMI7VE44ysKHhIR1D3HqXrH7l3PDOVPuxrd9jUnyulnQVxkKSOZ6fMJ5enuzx/UayveA7TogljLZ9zg1BRS+lV55Ypah2sSzgvrpxQ17rIbQ7PePQF0MrWUM4NIXZN2eOxZT05IJ7efYygIGI0j0tDCLsUmauxoze8WcJQ="
+
 # script: tox
 # script: py.test tests
 script:
@@ -18,6 +27,8 @@ script:
   - python runtests.py
   - python -m tests.test_logger
   - coverage run --source=geogame,dj_tg_bot manage.py test
+  # other script steps might be done before running the actual SonarQube analysis
+  - sonar-scanner -Dsonar.login=$SONAR_TOKEN
 
 # send coverage stats to coveralls.io
 after_success:
