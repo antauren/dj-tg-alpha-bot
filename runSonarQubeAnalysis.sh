@@ -47,7 +47,8 @@ elif [ "$TRAVIS_PULL_REQUEST" != "false" ] && [ -n "${GITHUB_TOKEN}" ]; then
 		-Dsonar.analysis.mode=preview \
 		-Dsonar.github.oauth=$GITHUB_TOKEN \
 		-Dsonar.github.repository=$TRAVIS_REPO_SLUG \
-		-Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST
+		-Dsonar.github.pullRequest=$TRAVIS_PULL_REQUEST \
+		-X -e
 else
     # When neither on master branch nor on a non-external pull request => nothing to do
     echo "Nothing to do"
@@ -57,4 +58,4 @@ fi
 echo TPR $TRAVIS_PULL_REQUEST
 echo TB  $TRAVIS_BRANCH
 echo TRS $TRAVIS_REPO_SLUG
-echo GT `expr substr ${GITHUB_TOKEN} 0 5`
+echo GT  ${GITHUB_TOKEN:0:2}
