@@ -6,15 +6,20 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
 
-# Удалить при подготовке проекта (начало)
-# Где и что менять для подготовки проекта (пока не проверялось)
-## Файл setup.py
-**name** - требуется указать имя проекта на латинице, лучше указывать одно слово или пару разделённую дефисом, **version** - версия проекта,
-имеено благодаря этому параметру после отправки PyPi разделяются разные версии, если версию менять файлы в PyPi будут перезатираться,
-**entrypoints** - точка входа, собственно откуда (из какого файла) запускается программа.
-# Заголовок типового проеекта
-## Описание проекта
+# Geo Quest application
+Use this application to easily create geographic quests and games. 
+A quest is a serie of steps with geocoordinates attached. Ask a question to user and let him/her find the place implied.
+ 
+## Project architecture
+The application is based on popular components: [Django](https://www.djangoproject.com), [Django Rest Framework](http://www.django-rest-framework.org/), [Django Telegram Bot](https://django-telegram-bot.readthedocs.io/en/latest/readme.html), [Python Telegram Bot](https://python-telegram-bot.org/).
 
-## Описание функционала проекта
+## Quickstart
+Deploy to Heroku or your own server infrastructure.
+Create bot user in admin interface.
+Create bot with BotFather.
+Activate bot.
+Create quest (to be done)
 
-# Удалить при подготовке проекта (конец)
+## Contributing 
+Contributions of all sizes are welcome. Please review our [contribution guidelines](CONTRIBUTING.md) to get started. 
+You can also help by [reporting bugs](https://github.com/lisitsky/dj-tg-alpha-bot/issues/new).
