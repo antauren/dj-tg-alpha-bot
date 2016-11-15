@@ -1,0 +1,18 @@
+-   repo: git://github.com/python-telegram-bot/mirrors-yapf
+    sha: v0.12.2
+    hooks:
+    -   id: yapf
+        files: ^(geogame|dj_tg_bot|tests)/.*\.py$
+-   repo: git://github.com/pre-commit/pre-commit-hooks
+    sha: 7539d8bd1a00a3c1bfd34cdb606d3a6372e83469
+    hooks:
+    -   id: flake8
+        files: ^(geogame|dj_tg_bot|tests)/.*\.py$
+-   repo: git://github.com/pre-commit/mirrors-pylint
+    sha: v1.6.4
+    hooks:
+    -   id: pylint
+        files: ^(geogame|dj_tg_bot|tests)/.*\.py$
+        args:
+        - --errors-only
+        - --disable=no-name-in-module,import-error
