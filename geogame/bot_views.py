@@ -14,7 +14,7 @@ class StartView(TemplateCommandView):
 
 
 class StartView1(TemplateCommandView):
-    template_text = 'geogame/messages/command_start_text.txt'
+    template_text = 'geogame/messages/command_start1_text.txt'
 
 
 class ScenariosListCommandView(ListCommandView):
