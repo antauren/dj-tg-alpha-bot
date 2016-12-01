@@ -8,11 +8,11 @@
     hooks:
     -   id: flake8
         files: ^(geogame|dj_tg_bot|tests)/.*\.py$
--   repo: git://github.com/pre-commit/mirrors-pylint
-    sha: v1.6.4
-    hooks:
-    -   id: pylint
-        files: ^(geogame|dj_tg_bot|tests)/.*\.py$
-        args:
-        - --errors-only
-        - --disable=no-name-in-module,import-error
+#-   repo: git://github.com/pre-commit/mirrors-pylint
+#    sha: v1.6.4
+#    hooks:
+#    -   id: pylint
+#        files: ^(geogame|dj_tg_bot|tests)/.*\.py$
+#        args:
+#        - --errors-only
+#        - --disable=no-name-in-module,import-error
