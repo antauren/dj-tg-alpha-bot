@@ -26,8 +26,11 @@ SECRET_KEY = ')!-5(%w7nw92#1b07bnn7_fjnzqi+br!x#$kk@y8ay77f@3kw4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['dj-tg-alpha-bot-pr-39.herokuapp.com']
-
+ALLOWED_HOSTS = [
+    'dj-tg-alpha-bot-pr-39.herokuapp.com',
+    'dj-tg-alpha-bot-staging.herokuapp.com',
+    'dj-tg-alpha-bot.herokuapp.com',
+]
 # Application definition
 
 INSTALLED_APPS = [
