@@ -9,51 +9,28 @@ from geogame.models import Scenario
 
 
 class TestSimpleCommands(testcases.BaseTestBot):
-    fixtures = ['tests/fixtures/scenarios', ]
-    start = {
-        'in': '/start',
-        'out': {
-            'parse_mode': 'Markdown',
-            'reply_markup': '',
-            'text': "Welcome"
-        }
-    }
+    fixtures = [
+        'tests/fixtures/scenarios',
+    ]
+    start = {'in': '/start',
+             'out': {'parse_mode': 'Markdown',
+                     'reply_markup': '',
+                     'text': "Welcome"}}
 
-    start_there = {
-        'in': '/start-there',
-        'out': {
-            'parse_mode': 'Markdown',
-            'reply_markup': '',
-            'text': "From there"
-        }
-    }
+    lists_scen01 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/play 1 Найти Кремль',
+                            'text': "Select from list:"}}
 
-    lists_scen01 = {
-        'in': '/list',
-        'out': {
-            'parse_mode': 'Markdown',
-            'reply_markup': '/play 1 Найти Кремль',
-            'text': "Select from list:"
-        }
-    }
+    lists_scen02 = {'in': '/list',
+                    'out': {'parse_mode': 'Markdown',
+                            'reply_markup': '/play 2 Find BigBen',
+                            'text': "Select from list:"}}
 
-    lists_scen02 = {
-        'in': '/list',
-        'out': {
-            'parse_mode': 'Markdown',
-            'reply_markup': '/play 2 Find BigBen',
-            'text': "Select from list:"
-        }
-    }
-
-    lists_scen_no = {
-        'in': '/list',
-        'out': {
-            'parse_mode': 'Markdown',
-            'reply_markup': '',
-            'text': "No scenarios at a moment"
-        }
-    }
+    lists_scen_no = {'in': '/list',
+                     'out': {'parse_mode': 'Markdown',
+                             'reply_markup': '',
+                             'text': "No scenarios at a moment"}}
 
     def setUp(self):
         # Bot upon saving tries to install webhook in real telegram
@@ -72,7 +49,7 @@ class TestSimpleCommands(testcases.BaseTestBot):
         assert telegram.bot.Bot.setWebhook is not self._original_setWebhook
         assert telegram.bot.Bot.setWebhook is self._patched_setWebhook
 
-    def test_start(self):
+    def test_start(self,):
         """
         Test bot accept normally command /start and replies as it should.
         """
@@ -101,10 +78,3 @@ class TestSimpleCommands(testcases.BaseTestBot):
         with mock.patch('geogame.bot_views.ScenariosListCommandView.queryset',
                         Scenario.objects.none()):
             self._test_message_ok(self.lists_scen_no)
-
-    def test_start_there(self):
-        """
-        Test ....
-        :return:
-        """
-        self._test_message_ok(self.start_there)
