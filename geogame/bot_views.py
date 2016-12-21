@@ -13,6 +13,10 @@ class StartView(TemplateCommandView):
     template_text = 'geogame/messages/command_start_text.txt'
 
 
+class StartViewThere(TemplateCommandView):
+    template_text = 'geogame/messages/command_start_text_there.txt'
+
+
 class ScenariosListCommandView(ListCommandView):
     # """docstring for ListView."""
     template_text = 'geogame/messages/command_list_text.txt'
